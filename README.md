@@ -88,10 +88,11 @@ const structure = {
 
 #### TODOs (for now)
 
-    1. [ ] clean up the code
-    2. [ ] rewrite the autocomplete method for the sake of performance
-    3. [ ] split the code into multiple files
-    4. [ ] fully document the code
-    5. [ ] add the ability to create files via `echo` or `nano` command
-    6. [ ] save files created by the user in local storage.
+1. [ ] clean up the code
+2. [ ] rewrite the autocomplete method for the sake of performance
+3. [ ] split the code into multiple files
+4. [ ] fully document the code
+5. [ ] add the ability to create files via `echo` or `nano` command
+6. [ ] save files created by the user in local storage.
+7. [ ] use webpack
 
