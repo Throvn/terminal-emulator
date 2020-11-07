@@ -46,7 +46,7 @@ const structure = {
     commands: {
         ...
     },
-    filesystem { 
+    filesystem: { 
         ...
         'foldername': {
             meta: { // every object needs meta object
