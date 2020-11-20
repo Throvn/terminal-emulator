@@ -34,7 +34,7 @@ const structure = {
             }
         }
     },
-    filesystem { 
+    filesystem: { 
         ...
     }
 }
