@@ -1,7 +1,7 @@
 // Make the DIV element draggable:
 dragElement(document.getElementById("window"));
 
-function dragElement(elmnt) {
+function dragElement(elmnt: HTMLElement): void {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
     // if present, the header is where you move the DIV from:
@@ -11,8 +11,7 @@ function dragElement(elmnt) {
     elmnt.onmousedown = dragMouseDown;
   }
 
-  function dragMouseDown(e) {
-    e = e || window.event;
+  function dragMouseDown(e: MouseEvent): void {
     e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
@@ -22,8 +21,7 @@ function dragElement(elmnt) {
     document.onmousemove = elementDrag;
   }
 
-  function elementDrag(e) {
-    e = e || window.event;
+  function elementDrag(e: DragEvent): void {
     e.preventDefault();
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
@@ -37,7 +35,7 @@ function dragElement(elmnt) {
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
   }
 
-  function closeDragElement() {
+  function closeDragElement(): void {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;

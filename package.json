@@ -2,10 +2,13 @@
   "name": "terminal-emulator",
   "version": "0.1.0",
   "description": "A frontend terminal emulator with a modular infrastructure and emulated filesystem",
-  "main": "index.ts",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc ./src/*.ts"
+    "build": "npx webpack --config webpack.config.js",
+    "copy": "cp -R ./src/assets/ ./dist/assets/ && cp ./src/index.html ./dist/",
+    "build:dist": "npm run build && npm run copy",
+    "dev": "nodemon --exec tsc ./src/*.ts"
   },
   "repository": {
     "type": "git",
@@ -25,5 +28,15 @@
   "bugs": {
     "url": "https://github.com/Throvn/terminal-emulator/issues"
   },
-  "homepage": "https://github.com/Throvn/terminal-emulator#readme"
+  "homepage": "https://github.com/Throvn/terminal-emulator#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {}
 }

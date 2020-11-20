@@ -291,12 +291,24 @@ code {
 table {
     width: 100%;
     margin-right: 18px;
+    border: dashed 1px white;
 }
 thead {
     text-align: center;
     font-weight: 600;
+    
 }
 
 tr {
     width: 50%;
+    margin-bottom: 13px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+td {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
 }
