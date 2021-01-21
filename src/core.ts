@@ -36,6 +36,7 @@ export class CMDs {
 
   /**
    * Get all commands
+   * @returns the entiry command object
    */
   public all(): object {
     return this.commands;
@@ -53,7 +54,7 @@ export class CMDs {
    * @param name command name
    * @returns {object} the function and description of your programm
    */
-  public find(name: string) {
+  public find(name: string): object|undefined {
     return this.commands[name];
   }
 }
