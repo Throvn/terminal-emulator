@@ -1,3 +1,8 @@
+export interface Command {
+  func: (directory: Path, command: string[]) => any,
+  description?: string
+}
+
 export class CMDs {
   private commands: any = {};
   public history: string[] = [""];
@@ -25,7 +30,7 @@ export class CMDs {
    */
   public add(
     name: string,
-    backend: (path: Path, args: string[]) => '',
+    backend: (path: Path, args: string[]) => string,
     description?: string
   ): void {
     this.commands[name] = {
@@ -54,7 +59,7 @@ export class CMDs {
    * @param name command name
    * @returns {object} the function and description of your programm
    */
-  public find(name: string): object|undefined {
+  public find(name: string): Command | undefined {
     return this.commands[name];
   }
 }

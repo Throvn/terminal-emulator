@@ -50,7 +50,7 @@ export const Commands = new CMDs({
     func: (path: Path, args: string[]): string => {
       args[1] = args[1] ? args[1] : ".";
 
-      const pth = args[1].replace("\n", "").split("/");
+      const pth = args[1].replace(/(\r\n|\n|\r)/gm, "").split("/");
       if (pth[0] === ".") {
         pth.shift();
       }
@@ -103,7 +103,7 @@ export const Commands = new CMDs({
         return;
       }
 
-      const pth: Path = new Path(args[1].replace("\n", ""));
+      const pth: Path = new Path(args[1].replace(/(\r\n|\n|\r)/gm, ""));
 
       let initFS = fs.getFolder(fs.activeDirectory);
 
@@ -196,7 +196,7 @@ export const Commands = new CMDs({
         return `<span style="margin-right: 8px;" class="text-error">✘</span> Error: please specify a path.`;
       }
 
-      const pth = args[1].replace("\n", "").split("/");
+      const pth = args[1].replace(/(\r\n|\n|\r)/gm, "").split("/");
       console.log(pth);
       if (pth[0] === ".") {
         pth.shift();
@@ -239,7 +239,7 @@ export const Commands = new CMDs({
 Commands.add(
   "hello",
   (path: Path, args: string[]): string => {
-    return "Hello yourself ;)";
+    return "Hello yourself ;D";
   },
   "Greets the user"
 );
